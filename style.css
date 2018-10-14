@@ -4,7 +4,7 @@
     margin: 0;
     overflow: hidden;
     font-family: hanyiBeiwei;
-    font-size: 35px;
+    font-size: 30px;
     line-height: 1.618;
 }
 
@@ -125,20 +125,123 @@ canvas {
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
+.page * {
+    font-size: 40px;
+}
+
 .page>.title {
     padding-bottom: 5px;
     margin-bottom: 20px;
     border-bottom: 3px solid black;
+    font-size: 70px;
 }
 
 /*===========================================================================================================*/
 /*单页设置*/
 
-/*首页*/
+/*首页-----第1页*/
 #page-0>.main-text {
     position: absolute;
-    top: calc(50% - 132px);
+    top: calc(50% - 200px);
     left: calc(50% - 450px);
     font-size: 150px;
-    font-family: hanyiBeiwei;
+}
+
+#page-0 .copyright {
+    position: absolute;
+    right: 100px;
+    top: calc(50% + 60px);
+    text-align: right;
+}
+
+#page-0 .copyright>div {
+    font-size: 50px;
+}
+
+/*问答环节----第2页*/
+#page-1 .answer {
+    position: absolute;
+    bottom: 100px;
+    right: 70px;
+    width: 600px;
+    height: 400px;
+    background-color: #eeeeeea6;
+    box-shadow: 0 0 20px #b7b7b7;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transform: scale(0);
+    transition: transform 0.6s;
+}
+
+/*介绍HDOJ----第3页*/
+#page-8 img {
+    width: 1200px;
+}
+
+/*编译器----第4页*/
+#page-2 li>a {
+    text-decoration: none;
+    color: black;
+}
+
+/*猜数字游戏----第6页*/
+#page-4 div.game-cnt {
+    display: inline-block;
+}
+
+#page-4>div:nth-child(3)>div:nth-child(2) {
+    padding: 0 calc( ( 100% - 176px ) / 2);
+}
+
+#page-4 div.game-cnt button {
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+}
+
+#page-4 div.game-cnt div {
+    width: 52px;
+    text-align: center;
+}
+
+/*二分法举例----第7页*/
+#page-5 span[id^=sortedNum] {
+    font-size: 80px;
+    padding: 0 20px;
+    transition: opacity 1s;
+}
+
+#page-5 li#another{
+    opacity: 0;
+}
+
+/*快速幂----第8页*/
+#page-6 * {
+    font-size: 50px;
+}
+
+#page-6 #calc-cnt {
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+}
+#page-6 span>sub {
+    font-size: 30px;
+}
+
+/*分治----第9页*/
+#page-7 img {
+    width: 1000px;
+}
+
+/*感谢----第10页*/
+#page-9 .main-text {
+    position: relative;
+    text-align: center;
+    top: calc(50% - 84.5px);
+}
+
+#page-9 .main-text *{
+    font-size: 150px;
 }

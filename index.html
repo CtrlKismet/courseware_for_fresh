@@ -29,60 +29,149 @@
             <div class="main-text">程序设计简述</div>
             <div class="copyright">
                 <div>软件部&nbsp;胡亦洲</div>
-                <div>CtrlKismet</div>
+                <div>Designed By CtrlKismet</div>
             </div>
         </div>
         <div class="page" id="page-1" :class="[{testUp:show_page[1]},{testfrontDown:1>now_page},{testbackDown:1<now_page}]">
             <div class="title">(自问自答的)Q&A环节</div>
-            <div class="question" id="q-1">Q:什么是程序设计竞赛？</div>
-            <!-- <div class="answer" id="a-1">A:顾名思义，程序设计竞赛就是一个或者多个同学在规定的时间内通过编写计算机程序来解决问题的比赛。</div> -->
-            <div class="question" id="q-2">Q:具体是一些什么问题呢？</div>
-            <!-- <div class="answer" id="a-2">A:举个简单的例子，要求你输入一个整数n，输出1~n的整数之和。</div> -->
-            <div class="question" id="q-3">Q:程序设计题目的要求。</div>
-            <!-- <div class="answer" id="a-3">A:所写的程序必须在规定时间内（一般是1s）得出结果。</div> -->
-            <div class="question" id="q-4">Q:我们能接触到一些什么具体的比赛呢？</div>
-            <!-- <div class="answer" id="a-4">A:一般的说我们学院的院赛（大一），学校的校赛（全校）；如果加入我们学校的ACM集训队能接触更多的比赛；还有一些社会性的比赛，比如百度每年举办的“百度之星”。</div> -->
-            <div class="question" id="q-5">Q:参加比赛有些什么好处呢？</div>
-            <!-- <div class="answer" id="a-5">A:有德育分，同时也是一种个人荣誉的体现，有些比赛还会有奖金。</div> -->
-            <div class="question" id="q-6">Q:参加比赛需要什么呢？</div>
-            <!-- <div class="answer" id="a-6">A:有一台电脑以及一颗愿意学习的心就好了:-)</div> -->
+            <div class="question" id="q-1" @click="changeAns(1)">Q:什么是程序设计竞赛？</div>
+            <div class="question" id="q-2" @click="changeAns(2)">Q:具体是一些什么问题呢？</div>
+            <div class="question" id="q-3" @click="changeAns(3)">Q:程序设计题目的要求。</div>
+            <div class="question" id="q-4" @click="changeAns(4)">Q:我们能接触到一些什么具体的比赛呢？</div>
+            <div class="question" id="q-5" @click="changeAns(5)">Q:参加比赛有些什么好处呢？</div>
+            <div class="question" id="q-6" @click="changeAns(6)">Q:参加比赛需要什么呢？</div>
+
+            <div class="answer">{{answer[choose_ans]}}</div>
         </div>
         <div class="page" id="page-2" :class="[{testUp:show_page[2]},{testfrontDown:2>now_page},{testbackDown:2<now_page}]">
-            <div class="title">练习平台</div>
-            <a href="http://acm.hdu.edu.cn/" target="blank"><img src="./images/hdoj.png" /></a>
-        </div>
-        <div class="page" id="page-3" :class="[{testUp:show_page[3]},{testfrontDown:3>now_page},{testbackDown:3<now_page}]">
             <div class="title">编译器的选择</div>
             <ul>
-                <li>CodeBlocks</li>
-                <li>Dev C++</li>
-                <li>Visual Studio Code</li>
+                <li>
+                    <a target="blank" href="https://sourceforge.net/projects/codeblocks/files/Binaries/17.12/Windows/codeblocks-17.12mingw-setup.exe/download">
+                        CodeBlocks(个人推荐)</a>
+                </li>
+                <li><a target="blank" href="https://sourceforge.net/projects/dev-cpp/">Dev C++</a></li>
+                <li><a target="blank" href="https://code.visualstudio.com/">Visual Studio Code(好看但是环境难配)</a></li>
                 <li>etc</li>
             </ul>
         </div>
-        <div class="page" id="page-4" :class="[{testUp:show_page[4]},{testfrontDown:4>now_page},{testbackDown:4<now_page}]">
-            <div class="title">可能用到的编程知识</div>
+        <div class="page" id="page-3" :class="[{testUp:show_page[3]},{testfrontDown:3>now_page},{testbackDown:3<now_page}]">
+            <div class="title">简单的C语言科普</div>
             <ul>
-                <li>For循环</li>
                 <li>C语言的执行顺序</li>
-                <li>函数和递归</li>
+                <li>
+                    <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C语言是一种高级语言，他的程序是由语句构成的，
+                        一个语句由一个分号结尾。C语言程序的执行则是以顺序结构执行的，一个C语言程序的入口是main函数，
+                        从main函数第一行开始直到main函数执行完毕。大家所学习到的或者即将学习到的那些
+                        if，switch，while，for等等结构就是为了使这种顺序结构发生变化所需要使用的，
+                        这里以选择结构if为例子简单的说明一下执行顺序以及if是如何改变顺序执行的。(example-0)
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这次课程的所有例程均会在之后提供给大家。</div>
+                </li>
             </ul>
         </div>
-        <div class="page" id="page-5" :class="[{testUp:show_page[5]},{testfrontDown:5>now_page},{testbackDown:5<now_page}]">
-            <div class="title">example-1</div>
-            <div></div>
+        <div class="page" id="page-4" :class="[{testUp:show_page[4]},{testfrontDown:4>now_page},{testbackDown:4<now_page}]">
+            <div class="title">example 1 猜数字游戏</div>
+            <div>
+                Description：游戏需要A，B两位同学，
+                其中A同学从1~100中选择一个数字并记在心里，B同学需要猜测另一位同学想的是什么数字。
+                在B猜测时，A需要告诉B猜的数字比他想的数字大还是小，重复猜测直到B猜中为止。统计猜测次数。
+            </div>
+            <div style="padding:100px;">
+                <div class="game-cnt">
+                    <button onclick="v.game_cnt1++;">&#9650;</button>
+                    <div>{{game_cnt1}}</div>
+                    <button onclick="v.game_cnt1--;">&#9660;</button>
+                </div>
+                <div class="game-cnt">
+                    <button onclick="v.game_cnt2++;">&#9650;</button>
+                    <div>{{game_cnt2}}</div>
+                    <button onclick="v.game_cnt2--;">&#9660;</button>
+                </div>
+                <div class="game-cnt">
+                    <button onclick="v.game_cnt3++;">&#9650;</button>
+                    <div>{{game_cnt3}}</div>
+                    <button onclick="v.game_cnt3--;">&#9660;</button>
+                </div>
+            </div>
         </div>
-        <div class="page" id="page-6" :class="[{testUp:show_page[6]},{testfrontDown:6>now_page},{testbackDown:6<now_page}]">
+        <div class="page" id="page-5" :class="[{testUp:show_page[5]},{testfrontDown:5>now_page},{testbackDown:5<now_page}]"
+            @click="playFrame">
+            <div class="title">example 1 猜数字游戏——二分法</div>
+            <ul>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;二分法显然就是每次询问最中间的数以确定所需要的数字位置。</li>
+                <li>举个简单的例子：</li>
+                <li style="text-align:center;">
+                    <span id="sortedNum1">12</span>
+                    <span id="sortedNum2">49</span>
+                    <span id="sortedNum3">54</span>
+                    <span id="sortedNum4">83</span>
+                    <span id="sortedNum5">95</span>
+                </li>
+                <li id="another">
+                    <span>我们来看另一个例子：</span>
+                    <div style="text-align:center;"><img src="./images/eg1.png" /></div>
 
+                </li>
+            </ul>
+        </div>
+        <div class="page" id="page-6" :class="[{testUp:show_page[6]},{testfrontDown:6>now_page},{testbackDown:6<now_page}]"
+            onclick="v.sol_flag++;" onmousewheel="v.calc_cnt++;">
+            <div class="title">example 2 乘方运算</div>
+            <div>
+                Description：给出两个正整数a、n,求出 a<sup>n</sup>。
+            </div>
+            <div>
+                Sample：求 2<sup>8</sup>。
+            </div>
+            <div v-show="sol_flag%2==0">
+                <div>Solution1：直接计算</div>
+                <div style="margin-left: 220px;">2<sup>8</sup> = 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2</div>
+            </div>
+            <div v-show="sol_flag%2==1">
+                <div>Solution2：</div>
+                <div style="margin-left: 220px;">2<sup>8</sup> = 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2</div>
+                <div style="margin-left: 270px;">= 2<sup>2</sup> * 2<sup>2</sup> * 2<sup>2</sup> * 2<sup>2</sup></div>
+                <div style="margin-left: 270px;">= 2<sup>4</sup> * 2<sup>4</sup></div>
+                <div style="margin-left: 220px;">2<sup>8</sup> = ( ( 2 * 2 ) * 2<sup>2</sup> ) * 2<sup>4</sup></div>
+            </div>
+            <div id="calc-cnt" v-show="calc_cnt!=0">
+                <span v-show="calc_cnt==1">{{(sol_flag%2==0?7:3)}}</span>
+                <span v-show="calc_cnt>1&&sol_flag%2==0">n-1</span>
+                <span v-show="calc_cnt>1&&sol_flag%2==1"><span>log</span><sub>2</sub><span>n</span></span>
+                <span>次</span>
+            </div>
         </div>
         <div class="page" id="page-7" :class="[{testUp:show_page[7]},{testfrontDown:7>now_page},{testbackDown:7<now_page}]">
-
+            <div class="title">example 2 乘方运算——分治</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于上述的这种算法，他也有一个“高大上”的名称，就是分治。</div>
+            <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分治从字面上理解就是分而治之，
+                通过把一个复杂的问题分成两个或更多的相同或相似的子问题，
+                再把子问题分成更小的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。
+            </div>
+            <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于上面的例子我们给出问题的通解:
+            </div>
+            <div style="text-align:center;"><img src="./images/formula.png" /></div>
         </div>
         <div class="page" id="page-8" :class="[{testUp:show_page[8]},{testfrontDown:8>now_page},{testbackDown:8<now_page}]">
-
+            <div class="title">练习平台</div>
+            <div style="text-align:center;">
+                <a href="http://acm.hdu.edu.cn/" target="blank"><img src="./images/hdoj.png" /></a>
+            </div>
         </div>
         <div class="page" id="page-9" :class="[{testUp:show_page[9]},{testfrontDown:9>now_page},{testbackDown:9<now_page}]">
-
+            <div class="main-text">
+                <div>
+                    <span>谢</span>
+                    <span>谢</span>
+                </div>
+                <div>
+                    <span>Thanks for Listening!</span>
+                </div>
+            </div>
         </div>
     </div>
 
