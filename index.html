@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>First class to Fresh</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="time"></div>
+    <div class="allPage" tabindex="0" @keydown.left="getPrePage" @keydown.right="getNextPage">
+        <div class="pagecnt">
+            <span :data-before="pre_page" :data-after="pre_page+2">{{pre_page+1}}</span>
+            <span>/&nbsp;&nbsp;{{max_page}}</span>
+        </div>
+        <div class="timeNow">
+            <span :data-before="time_h1[1]==2?0:time_h1[1]+1">{{time_h1[1]}}</span>
+            <span :data-before="time_h1[1]==2?(time_h2[1]==3?0:time_h2[1]+1):(time_h2[1]==9?0:time_h2[1]+1)">{{time_h2[1]}}</span>
+            <span>:</span>
+            <span :data-before="time_m1[1]==5?0:time_m1[1]+1">{{time_m1[1]}}</span>
+            <span :data-before="time_m2[1]==9?0:time_m2[1]+1">{{time_m2[1]}}</span>
+            <span>:</span>
+            <span :data-before="time_s1[1]==5?0:time_s1[1]+1">{{time_s1[1]}}</span>
+            <span :data-before="time_s2[1]==9?0:time_s2[1]+1">{{time_s2[1]}}</span>
+        </div>
+        <div class="page" id="page-0" :class="[{testUp:show_page[0]},{testfrontDown:0>now_page},{testbackDown:0<now_page}]">
+            <div class="main-text">程序设计简述</div>
+            <div class="copyright">
+                <div>软件部&nbsp;胡亦洲</div>
+                <div>CtrlKismet</div>
+            </div>
+        </div>
+        <div class="page" id="page-1" :class="[{testUp:show_page[1]},{testfrontDown:1>now_page},{testbackDown:1<now_page}]">
+            <div class="title">(自问自答的)Q&A环节</div>
+            <div class="question" id="q-1">Q:什么是程序设计竞赛？</div>
+            <!-- <div class="answer" id="a-1">A:顾名思义，程序设计竞赛就是一个或者多个同学在规定的时间内通过编写计算机程序来解决问题的比赛。</div> -->
+            <div class="question" id="q-2">Q:具体是一些什么问题呢？</div>
+            <!-- <div class="answer" id="a-2">A:举个简单的例子，要求你输入一个整数n，输出1~n的整数之和。</div> -->
+            <div class="question" id="q-3">Q:程序设计题目的要求。</div>
+            <!-- <div class="answer" id="a-3">A:所写的程序必须在规定时间内（一般是1s）得出结果。</div> -->
+            <div class="question" id="q-4">Q:我们能接触到一些什么具体的比赛呢？</div>
+            <!-- <div class="answer" id="a-4">A:一般的说我们学院的院赛（大一），学校的校赛（全校）；如果加入我们学校的ACM集训队能接触更多的比赛；还有一些社会性的比赛，比如百度每年举办的“百度之星”。</div> -->
+            <div class="question" id="q-5">Q:参加比赛有些什么好处呢？</div>
+            <!-- <div class="answer" id="a-5">A:有德育分，同时也是一种个人荣誉的体现，有些比赛还会有奖金。</div> -->
+            <div class="question" id="q-6">Q:参加比赛需要什么呢？</div>
+            <!-- <div class="answer" id="a-6">A:有一台电脑以及一颗愿意学习的心就好了:-)</div> -->
+        </div>
+        <div class="page" id="page-2" :class="[{testUp:show_page[2]},{testfrontDown:2>now_page},{testbackDown:2<now_page}]">
+            <div class="title">练习平台</div>
+            <a href="http://acm.hdu.edu.cn/" target="blank"><img src="./images/hdoj.png" /></a>
+        </div>
+        <div class="page" id="page-3" :class="[{testUp:show_page[3]},{testfrontDown:3>now_page},{testbackDown:3<now_page}]">
+            <div class="title">编译器的选择</div>
+            <ul>
+                <li>CodeBlocks</li>
+                <li>Dev C++</li>
+                <li>Visual Studio Code</li>
+                <li>etc</li>
+            </ul>
+        </div>
+        <div class="page" id="page-4" :class="[{testUp:show_page[4]},{testfrontDown:4>now_page},{testbackDown:4<now_page}]">
+            <div class="title">可能用到的编程知识</div>
+            <ul>
+                <li>For循环</li>
+                <li>C语言的执行顺序</li>
+                <li>函数和递归</li>
+            </ul>
+        </div>
+        <div class="page" id="page-5" :class="[{testUp:show_page[5]},{testfrontDown:5>now_page},{testbackDown:5<now_page}]">
+            <div class="title">example-1</div>
+            <div></div>
+        </div>
+        <div class="page" id="page-6" :class="[{testUp:show_page[6]},{testfrontDown:6>now_page},{testbackDown:6<now_page}]">
+
+        </div>
+        <div class="page" id="page-7" :class="[{testUp:show_page[7]},{testfrontDown:7>now_page},{testbackDown:7<now_page}]">
+
+        </div>
+        <div class="page" id="page-8" :class="[{testUp:show_page[8]},{testfrontDown:8>now_page},{testbackDown:8<now_page}]">
+
+        </div>
+        <div class="page" id="page-9" :class="[{testUp:show_page[9]},{testfrontDown:9>now_page},{testbackDown:9<now_page}]">
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+/*global setting*/
+
+* {
+    margin: 0;
+    overflow: hidden;
+    font-family: hanyiBeiwei;
+    font-size: 35px;
+    line-height: 1.618;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    background-color: #eee;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@font-face {
+    font-family: hanyiBeiwei;
+    src: url(./fonts/HYBeiWeiXieJingW.ttf);
+}
+
+/*===========================================================================================================*/
+/*翻页动画*/
+
+.allPage {
+    width: 100%;
+    height: 100%;
+}
+
+.allPage:focus {
+    outline: none;
+}
+
+.testUp {
+    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg) !important;
+}
+
+.testbackDown {
+    transform: perspective(1000px) rotate3d(1, 0, 0, 90deg) !important;
+}
+
+.testfrontDown {
+    transform: perspective(1000px) rotate3d(1, 0, 0, -90deg) !important;
+}
+
+/*===========================================================================================================*/
+/*页面设置*/
+
+/*左下角翻页*/
+.pagecnt {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+}
+
+.pagecnt * {
+    display: inline-block;
+    overflow: visible;
+}
+
+.pagecnt>span:nth-child(1)::before {
+    content: attr(data-before);
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+
+.pagecnt>span:nth-child(1) {
+    width: 25.19px;
+    transition: transform 0.3s ease-out;
+}
+
+.pagecnt>span:nth-child(1)::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+/*右下角时间*/
+.timeNow {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+
+.timeNow * {
+    overflow: visible;
+    float: left;
+}
+
+.timeNow>span::before {
+    content: attr(data-before);
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+
+.timeNow>span {
+    width: 16px;
+    transition: transform 0.3s ease-out;
+}
+
+/*页面通用设置*/
+.page {
+    position: absolute;
+    width: calc(100% - 80px);
+    height: calc(100% - 40px);
+    padding: 20px 40px;
+    transform: rotateX(-90deg);
+    transition: transform 0.6s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.page>.title {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid black;
+}
+
+/*===========================================================================================================*/
+/*单页设置*/
+
+/*首页*/
+#page-0>.main-text {
+    position: absolute;
+    top: calc(50% - 132px);
+    left: calc(50% - 450px);
+    font-size: 150px;
+    font-family: hanyiBeiwei;
+}
