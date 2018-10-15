@@ -81,11 +81,11 @@ let v = new Vue({
     el: ".allPage",
     data: {
         /*用于旋转*/
-        show_page: [true, false, false, false, false, false, false, false, false, true],
+        show_page: [true, false, false, false, false, false, false, false, false, false],
 
         /*用于翻页*/
-        pre_page: 9,
-        now_page: 9,
+        pre_page: 0,
+        now_page: 0,
         max_page: 10,
 
         /*用于时间*/
@@ -354,6 +354,7 @@ function clearFlag() {
 }
 
 window.onload = function () {
+    console.log('彩蛋！！');
     $('.allPage').focus();
     getTime();
 }

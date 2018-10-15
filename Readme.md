@@ -20,3 +20,5 @@ span::after {
 翻转动画的制作（详见html以及css）
 
 [html常见特殊字符](https://blog.csdn.net/bluestarf/article/details/40652011)
+
+字体压缩工具——字蛛(font-spider)   command:font-spider path/index.html

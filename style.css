@@ -45,15 +45,15 @@ canvas {
 }
 
 .testUp {
-    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg) !important;
+    transform:perspective(1000px) rotate3d(1, 0, 0, 0deg) !important;
 }
 
 .testbackDown {
-    transform: perspective(1000px) rotate3d(1, 0, 0, 90deg) !important;
+    transform:perspective(1000px) rotate3d(1, 0, 0, 90deg) !important;
 }
 
 .testfrontDown {
-    transform: perspective(1000px) rotate3d(1, 0, 0, -90deg) !important;
+    transform:perspective(1000px) rotate3d(1, 0, 0, -90deg) !important;
 }
 
 /*===========================================================================================================*/
@@ -190,7 +190,7 @@ canvas {
 }
 
 #page-4>div:nth-child(3)>div:nth-child(2) {
-    padding: 0 calc( ( 100% - 176px ) / 2);
+    padding: 0 calc((100% - 180px) / 2);
 }
 
 #page-4 div.game-cnt button {
@@ -212,7 +212,7 @@ canvas {
     transition: opacity 1s;
 }
 
-#page-5 li#another{
+#page-5 li#another {
     opacity: 0;
 }
 
@@ -226,6 +226,7 @@ canvas {
     right: 100px;
     bottom: 100px;
 }
+
 #page-6 span>sub {
     font-size: 30px;
 }
@@ -239,9 +240,13 @@ canvas {
 #page-9 .main-text {
     position: relative;
     text-align: center;
-    top: calc(50% - 84.5px);
+    top: calc(50% - 200px);
 }
 
-#page-9 .main-text *{
+#page-9>div>div:nth-child(1)>span {
     font-size: 150px;
+}
+
+#page-9>div>div:nth-child(2)>span {
+    font-size: 100px;
 }
